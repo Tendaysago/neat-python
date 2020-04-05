@@ -8,12 +8,25 @@ def mean(values):
     values = list(values)
     return sum(map(float, values)) / len(values)
 
+def llmean(values):
+    print(values)
+    ret=[]
+    print(len(values[0]), len(values))
+    tmp = []
+    for i in range(len(values[0])):
+        tmp=0
+        for j in range(len(values)):
+            print(values[j][i])
+            tmp += values[j][i]
+        ret.append(tmp/len(values))
+    return ret
+
+
 
 def median(values):
     values = list(values)
     values.sort()
     return values[len(values) // 2]
-
 
 def median2(values):
     values = list(values)
@@ -25,7 +38,6 @@ def median2(values):
         return values[n//2]
     i = n//2
     return (values[i - 1] + values[i])/2.0
-
 
 def variance(values):
     values = list(values)
